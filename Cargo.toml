@@ -1,0 +1,26 @@
+[package]
+name = "rust-search"
+version = "0.1.0"
+edition = "2021"
+authors = ["Psqnn ppasa5684@gmail.com"]
+description = "High-performance full-text search engine. Modern alternative to everything.sh"
+repository = "https://github.com/psqnn/rust-search"
+homepage = "https://github.com/psqnn/rust-search"
+license = "GPL-3.0-or-later OR LicenseRef-Commercial"
+readme = "README.md"
+keywords = ["search", "index", "file", "sled", "async"]
+categories = ["command-line-utilities", "database"]
+
+[dependencies]
+sled = "0.34"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+walkdir = "2.5.0"
+
+[profile.release]
+opt-level = 3      
+lto = true         
+codegen-units = 1  
+strip = true       
