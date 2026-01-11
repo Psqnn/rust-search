@@ -1,47 +1,160 @@
 # rust-search
 
-sled BwTree full-text search engine. Open source alternative to everything.sh.
+**🚀 High-performance full-text search engine powered by sled BwTree.** Open source alternative to everything.sh. **Dual-licensed: GPL-3.0 + Commercial.**
 
-## Features
-- 100MB RAM indexes 1TB disk  
-- BM25 ranking (stemmer ready)
-- Tokio async indexing
-- results.db (single file)
+[![GitHub stars](https://img.shields.io/github/stars/psqnn/rust-search)](https://github.com/psqnn/rust-search)
+[![License: Dual](https://img.shields.io/badge/License-Dual-brightgreen.svg)](https://github.com/psqnn/rust-search/blob/main/LICENSE.GPL-3.0)
 
-## Quickstart
+## ✨ Features
+- **Blazing fast** indexing with async Tokio
+- **Minimal memory** footprint (100MB RAM)
+- **sled BwTree** lock-free embedded database
+- **Single file** database (`results.db`)
+- **BM25 ranking** support
+- **CLI interface** with progress tracking
+- **Cross-platform** (Linux, macOS, Windows)
+
+## 🎯 Quickstart
 ```bash
-cargo install rust-search
-rust-search index /home
-rust-search search "filename:setup.py"
+# Build from source
+git clone https://github.com/psqnn/rust-search
+cd rust-search
+cargo build --release
+
+# Index your files
+./target/release/rust-search index /home
+
+# Search instantly
+./target/release/rust-search search "filename"
+./target/release/rust-search search "*.rs"
+./target/release/rust-search search "function async"
 ```
 
-## Architecture
+## 🏗️ Architecture
 ```
 results.db (sled BwTree)
 ├── files: path → FileInfo {size, hash, mtime}
-├── terms: word → [file_id]
-└── index: file_id → inverted index
+├── terms: word → [file_id] (inverted index)
+└── metadata: stats, config
 ```
 
-## Benchmarks (planned)
+**Search pipeline:**
 ```
-Query: 10ms (1TB → top 100)
-Index: 500GB/hour (SSD)
-RAM: 100MB fixed
+query → tokenize → lookup terms → retrieve file_ids → rank → results
 ```
 
-## Build
+##  Performance
+- **Fast indexing** with async I/O (Tokio)
+- **Minimal storage** efficient B-Tree layout
+- **Quick queries** in-memory term lookups
+- **Responsive CLI** real-time progress
+
+##  Building from Source
+
 ```bash
-git clone https://github.com/YOUR/rust-search
+# Requirements: Rust 1.70+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Clone & build
+git clone https://github.com/psqnn/rust-search
 cd rust-search
 cargo build --release
+
+# Binary location
+./target/release/rust-search
 ```
 
-## Roadmap
-1. FileInfo struct (models.rs)
-2. Snowball stemmer (Russian/English)
-3. BM25 ranker
-4. CLI search
-5. GUI integrations
+## Usage
 
+### Index files
+```bash
+# Index entire filesystem
+rust-search index /
 
+# Index home directory  
+rust-search index ~
+
+# Custom database location
+rust-search index /home --db ./custom.db
+```
+
+### Search queries
+```bash
+# Simple keyword search
+rust-search search "setup.py"
+
+# Filename filtering
+rust-search search "filename:*.py"
+
+# Code search
+rust-search search "function async"
+
+# View database statistics
+rust-search stats
+
+# Optimize database
+rust-search vacuum
+```
+
+## 🛠️ Roadmap
+1. **✅** Core indexing engine
+2. **⏳** Snowball stemmer (Russian/English)
+3. **⏳** Advanced BM25 ranking
+4. **⏳** Tauri GUI desktop application
+5. **⏳** Incremental index updates
+6. **⏳** Fuzzy search matching
+
+## 💼 Licensing
+
+**Dual-licensed for maximum flexibility:**
+
+### **GPL-3.0 (Open Source)**
+Free for open-source, non-commercial, and academic projects.
+
+**Key terms:**
+- ✅ Use and modify freely
+- ✅ Distribute source code
+- ⚠️ Copyleft: Derivative works must use GPL-3.0
+
+**[LICENSE.GPL-3.0](./LICENSE.GPL-3.0)**
+
+### 💰 **Commercial License**
+For companies and proprietary products.
+
+**Key terms:**
+- ✅ Closed-source permitted
+- ✅ No GPL restrictions
+- ✅ Priority support
+- ✅ Custom features available
+
+**Pricing:** $399/year OR $2,999/perpetual license
+
+**[Commercial License](./LICENSE.COMMERCIAL.md)** | **contact@rust-search.dev**
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+```bash
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/amazing-feature)
+3. Commit your changes (git commit -m 'Add amazing feature')
+4. Push to the branch (git push origin feature/amazing-feature)
+5. Open a Pull Request
+```
+
+All contributions must comply with GPL-3.0 licensing.
+
+## 📬 Contact & Support
+- **Commercial inquiries:** ppasa5684@gmail.com
+- **GitHub:** [psqnn/rust-search](https://github.com/psqnn/rust-search)
+- **Issues:** [GitHub Issues](https://github.com/psqnn/rust-search/issues)
+
+## 📄 License
+Dual-licensed under [GPL-3.0](./LICENSE.GPL-3.0) and [Commercial License](./LICENSE.COMMERCIAL.md)
+
+---
+
+**⭐ Star on GitHub if you find this useful!**
+
+**rust-search: The modern alternative to everything.sh** 🔥
