@@ -127,9 +127,9 @@ For companies and proprietary products.
 - ✅ Priority support
 - ✅ Custom features available
 
-**Pricing:** $399/year OR $2,999/perpetual license
+**Pricing:** $99/year OR $699/perpetual license
 
-**[Commercial License](./LICENSE.COMMERCIAL.md)** | **contact@rust-search.dev**
+**[Commercial License](./LICENSE.COMMERCIAL.md)** | **ppasa5684@gmail.com**
 
 ## 🤝 Contributing
 
