@@ -1,11 +1,10 @@
 # rust-search
-
-**🚀 High-performance full-text search engine powered by sled BwTree.** Open source alternative to everything.sh. **Dual-licensed: GPL-3.0 + Commercial.**
+## Full-text search engine powered by sled BwTree.** Open source alternative to everything.sh. **Dual-licensed: GPL-3.0 + Commercial.**
 
 [![GitHub stars](https://img.shields.io/github/stars/psqnn/rust-search)](https://github.com/psqnn/rust-search)
 [![License: Dual](https://img.shields.io/badge/License-Dual-brightgreen.svg)](https://github.com/psqnn/rust-search/blob/main/LICENSE.GPL-3.0)
 
-## ✨ Features
+## Features
 - **Blazing fast** indexing with async Tokio
 - **Minimal memory**
 - **Single file** database (`results.db`)
@@ -156,12 +155,12 @@ Contributions are welcome! Please follow these steps:
 
 All contributions must comply with GPL-3.0 licensing.
 
-## 📬 Contact & Support
+## Contact & Support
 - **Commercial inquiries:** ppasa5684@gmail.com
 - **GitHub:** [psqnn/rust-search](https://github.com/psqnn/rust-search)
 - **Issues:** [GitHub Issues](https://github.com/psqnn/rust-search/issues)
 
-## 📄 License
+##  License
 Dual-licensed under [GPL-3.0](./LICENSE.GPL-3.0) and [Commercial License](./LICENSE.COMMERCIAL.md)
 
 ---
