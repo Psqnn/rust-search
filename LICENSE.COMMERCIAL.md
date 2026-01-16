@@ -14,8 +14,8 @@ rust-search LLC grants you a **non-exclusive, non-transferable license** to use 
 
 | Plan | Price | Term | Rights |
 |------|-------|------|--------|
-| **Annual** | $99 | 1 year | Closed-source, commercial use |
-| **Perpetual** | $799 | Forever | Perpetual license, all updates |
+| **Annual** | $29 | 1 year | Closed-source, commercial use |
+| **Perpetual** | $299 | Forever | Perpetual license, all updates |
 
 ### Payment Terms:
 - Invoicing upon purchase
