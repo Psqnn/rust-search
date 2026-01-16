@@ -7,14 +7,15 @@
 
 ## ✨ Features
 - **Blazing fast** indexing with async Tokio
-- **Minimal memory** footprint (100MB RAM)
-- **sled BwTree** lock-free embedded database
+- **Minimal memory**
 - **Single file** database (`results.db`)
-- **BM25 ranking** support
-- **CLI interface** with progress tracking
-- **Cross-platform** (Linux, macOS, Windows)
-
+- **Cli-usage** In roadmap Gui
 ## 🎯 Quickstart
+```bash
+git clone https://github.com/rust-search
+cd rust-search
+```
+or compile from source
 ```bash
 # Build from source
 git clone https://github.com/psqnn/rust-search
