@@ -1,4 +1,4 @@
-# rust-search
+# rust-search for linux/windows 
 ## Full-text search engine powered by sled BwTree.** Open source alternative to everything.sh. **Dual-licensed: GPL-3.0 + Commercial.**
 
 [![GitHub stars](https://img.shields.io/github/stars/psqnn/rust-search)](https://github.com/psqnn/rust-search)
@@ -75,7 +75,6 @@ cargo build --release
 ```
 
 ## Usage
-
 ### Index files
 ```bash
 # Index entire filesystem
@@ -109,7 +108,7 @@ rust-search vacuum
 ## Roadmap
 1. **✅** Core indexing engine
 2. **⏳** Snowball stemmer (Russian/English)
-3. **⏳** Advanced BM25 ranking
+3. **⏳** Mac Os rust-search
 4. **⏳** Tauri GUI desktop application
 5. **⏳** Incremental index updates
 6. **⏳** Fuzzy search matching
