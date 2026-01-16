@@ -10,12 +10,22 @@
 - **Minimal memory**
 - **Single file** database (`results.db`)
 - **Cli-usage** In roadmap Gui
-## 🎯 Quickstart
+## Quickstart
 ```bash
-git clone https://github.com/rust-search
-cd rust-search
+#!/bin/bash
+LATEST_URL=$(curl -s https://api.github.com/repos/Psqnn/rust-search/releases/latest | 
+    grep '"browser_download_url"' | 
+    grep "rust-search-linux" | 
+    head -1 | 
+    cut -d '"' -f 4)
+
+wget -O rust-search-linux "$LATEST_URL" &&
+chmod +x rust-search-linux &&
+./rust-search-linux --help
+ln rust-search-linux /usr/bin
 ```
-or compile from source
+or compile from sources
+
 ```bash
 # Build from source
 git clone https://github.com/psqnn/rust-search
@@ -23,15 +33,15 @@ cd rust-search
 cargo build --release
 
 # Index your files
-./target/release/rust-search index /home
+rust-search index /home
 
 # Search instantly
-./target/release/rust-search search "filename"
-./target/release/rust-search search "*.rs"
-./target/release/rust-search search "function async"
+rust-search -n filename
+rust-search search "*.rs"
+rust-search -n"function async"
 ```
 
-## 🏗️ Architecture
+## Architecture
 ```
 results.db (sled BwTree)
 ├── files: path → FileInfo {size, hash, mtime}
@@ -97,7 +107,7 @@ rust-search stats
 rust-search vacuum
 ```
 
-## 🛠️ Roadmap
+## Roadmap
 1. **✅** Core indexing engine
 2. **⏳** Snowball stemmer (Russian/English)
 3. **⏳** Advanced BM25 ranking
@@ -105,7 +115,7 @@ rust-search vacuum
 5. **⏳** Incremental index updates
 6. **⏳** Fuzzy search matching
 
-## 💼 Licensing
+##  Licensing
 
 **Dual-licensed for maximum flexibility:**
 
@@ -128,11 +138,11 @@ For companies and proprietary products.
 - ✅ Priority support
 - ✅ Custom features available
 
-**Pricing:** $99/year OR $699/perpetual license
+**Pricing:** $29/year OR $299/perpetual license
 
 **[Commercial License](./LICENSE.COMMERCIAL.md)** | **ppasa5684@gmail.com**
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -158,4 +168,4 @@ Dual-licensed under [GPL-3.0](./LICENSE.GPL-3.0) and [Commercial License](./LICE
 
 **⭐ Star on GitHub if you find this useful!**
 
-**rust-search: The modern alternative to everything.sh** 🔥
+**rust-search: The modern alternative to everything.sh** 
