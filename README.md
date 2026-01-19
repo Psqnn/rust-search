@@ -1,8 +1,11 @@
 # rust-search for linux/windows 
-## Full-text search engine powered by sled BwTree.** Open source alternative to everything.sh. **Dual-licensed: GPL-3.0 + Commercial.**
+## Full-text search engine powered by sled BwTree. Open source alternative to everything.sh. **Dual-licensed: GPL-3.0 + Commercial.**
 
 [![GitHub stars](https://img.shields.io/github/stars/psqnn/rust-search)](https://github.com/psqnn/rust-search)
 [![License: Dual](https://img.shields.io/badge/License-Dual-brightgreen.svg)](https://github.com/psqnn/rust-search/blob/main/LICENSE.GPL-3.0)
+
+## Fast download
+https://github.com/Psqnn/rust-search/releases/tag/z
 
 ## Features
 - **Blazing fast** indexing with async Tokio
